@@ -6,4 +6,4 @@ Stratégie de logger changée en : File Logger
 Stratégie de logger changée en : File Logger
 Stratégie de logger changée en : File Logger
 Stratégie de logger changée en : File Logger
-[08/06/2025 09:13:04] Rectangle dessiné aux coordonnées : (x=183.2, y=127.2)
+[08/06/2025 09:13:04] Rectangle dessiné aux coordonnées : (x=183.2, y=127.2) 
