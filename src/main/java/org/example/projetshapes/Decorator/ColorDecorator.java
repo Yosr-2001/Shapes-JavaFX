@@ -17,7 +17,7 @@ public class ColorDecorator implements ShapeDraw {
         Color prev = (Color) gc.getStroke();
         gc.setStroke(color);
         decoratedShape.draw(gc);
-
         gc.setStroke(prev);
+
     }
 }
