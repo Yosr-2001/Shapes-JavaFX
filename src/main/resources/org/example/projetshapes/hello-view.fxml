@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ColorPicker?>
+<BorderPane fx:controller="org.example.projetshapes.HelloController"
+            xmlns:fx="http://javafx.com/fxml"
+            style="-fx-background-color: #ffffff;">
+    <!-- BARRE LATÉRALE GAUCHE -->
+    <left>
+
+        <VBox spacing="15" style="-fx-background-color: #eeeeee;" prefWidth="200">
+            <padding>
+                <Insets top="15" right="10" bottom="15" left="10"/>
+            </padding>
+            <Label text="Choisir une couleur" style="-fx-font-weight: bold;" />
+            <ColorPicker fx:id="colorPicker" prefWidth="150" />
+
+            <Label text="Outils de dessin" style="-fx-font-weight: bold;" />
+            <HBox spacing="10">
+                <Label fx:id="rectLabel" text="⬛ Rectangle"
+                       style="-fx-border-color: #ccc; -fx-padding: 5; -fx-background-color: #ffffff;" />
+                <Label fx:id="circleLabel" text="⚪ Cercle"
+                       style="-fx-border-color: #ccc; -fx-padding: 5; -fx-background-color: #ffffff;" />
+            </HBox>
+
+            <Button fx:id="showShapesButton"
+                    text="Afficher toutes les formes"
+                    wrapText="true"
+                    maxWidth="Infinity"/>
+
+            <Label text="Mode de journalisation" style="-fx-font-weight: bold;" />
+            <ChoiceBox fx:id="loggerChoiceBox"  prefWidth="130" style="-fx-padding: 2 5;"/>
+        </VBox>
+    </left>
+
+    <!-- ZONE DE DESSIN CENTRALE -->
+    <center>
+        <Canvas fx:id="canvas" width="800" height="500"
+                style="-fx-border-color: #ccc; -fx-border-width: 1px;"/>
+    </center>
+</BorderPane>
