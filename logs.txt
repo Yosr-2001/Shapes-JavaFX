@@ -1,15 +1,2 @@
 Stratégie de logger changée en : File Logger
-[08/06/2025 09:04:44] Rectangle dessiné aux coordonnées : (x=88.0, y=59.2)
-Stratégie de logger changée en : File Logger
-[08/06/2025 09:05:55] Rectangle dessiné aux coordonnées : (x=72.80000000000001, y=65.6)
-[08/06/2025 09:05:58] cercle dessiné aux coordonnées : (157.60000000000002, 54.4)
-Stratégie de logger changée en : File Logger
-Stratégie de logger changée en : File Logger
-Stratégie de logger changée en : File Logger
-[08/06/2025 09:13:04] Rectangle dessiné aux coordonnées : (x=183.2, y=127.2)
-Stratégie de logger changée en : File Logger
-[08/06/2025 09:47:42] ⬛ Rectangle dessiné aux coordonnées : (x=119.19999999999999, y=141.6), couleur : #800080
-[08/06/2025 09:47:46] ⚪ Cercle dessiné aux coordonnées : (x=89.60000000000002, y=152.0), couleur : #CC3333
-[08/06/2025 09:47:47] ⬛ Rectangle dessiné aux coordonnées : (x=94.39999999999998, y=156.8), couleur : #CC3333
-Stratégie de logger changée en : File Logger
-[08/06/2025 10:48:22] ⚪ Cercle dessiné aux coordonnées : (x=339.20000000000005, y=244.8), couleur : #990000
+[08/06/2025 13:45:40] ⬛ Rectangle dessiné aux coordonnées : (x=81.60000000000002, y=183.2), couleur : #80334D

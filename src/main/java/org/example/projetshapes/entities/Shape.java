@@ -28,23 +28,18 @@ public class Shape {
         return y;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
 
     public int getIdDessin() {
     return this.idDessin;
     }
 
-    public void setIdDessin(int idDessin) {
-        this.idDessin = idDessin;
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "type='" + type + '\'' +
+                ", x=" + x +
+                ", y=" + y +
+                ", idDessin=" + idDessin +
+                '}';
     }
 }

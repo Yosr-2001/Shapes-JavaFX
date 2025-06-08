@@ -1,7 +1,7 @@
 package org.example.projetshapes.Decorator;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import org.example.projetshapes.Selection.ShapeDraw;
+import org.example.projetshapes.Strategy.ShapeDraw;
 
 public class ColorDecorator implements ShapeDraw {
     private final ShapeDraw decoratedShape;

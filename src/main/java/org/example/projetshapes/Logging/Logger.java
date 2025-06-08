@@ -19,11 +19,5 @@ public class Logger {
         System.out.println("LOG: " + message);
     }
 
-    public void afficherLogs() {
-        System.out.println("\n--- Journal des operations ---");
-        for (String log : logs) {
-            System.out.println(log);
-        }
 
-    }
 }

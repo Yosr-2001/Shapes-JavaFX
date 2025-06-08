@@ -1,4 +1,4 @@
-package org.example.projetshapes.Selection;
+package org.example.projetshapes.Strategy;
 
 import javafx.scene.canvas.GraphicsContext;
 
