@@ -24,5 +24,6 @@ public class Logger {
         for (String log : logs) {
             System.out.println(log);
         }
+
     }
 }

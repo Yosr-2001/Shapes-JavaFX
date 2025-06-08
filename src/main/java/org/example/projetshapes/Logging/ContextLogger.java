@@ -7,6 +7,7 @@ public class ContextLogger {
         this.strategy = strategy;
     }
 
+
     public void log(String message) {
         if (strategy != null) {
             strategy.log(message);

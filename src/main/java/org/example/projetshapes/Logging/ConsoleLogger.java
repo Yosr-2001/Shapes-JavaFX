@@ -5,4 +5,5 @@ public class ConsoleLogger implements  LoggerStrategy{
     public void log(String message) {
         System.out.println("Console log: " + message);
     }
+
 }

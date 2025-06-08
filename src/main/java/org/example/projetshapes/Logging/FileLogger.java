@@ -13,5 +13,6 @@ public class FileLogger implements LoggerStrategy {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }
