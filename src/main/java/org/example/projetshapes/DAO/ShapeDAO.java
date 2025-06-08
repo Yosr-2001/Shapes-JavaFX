@@ -11,24 +11,38 @@ public class ShapeDAO {
     private final String url = "jdbc:mysql://localhost:3306/masi";
     private final String user = "root";
     private final String password = "";
-
-    public void saveShape(Shape shape) {
-        String sql = "INSERT INTO shapes (type, x, y) VALUES (?, ?, ?)";
-
+    public void saveShape(Shape shape) throws SQLException {
+        String sql = "INSERT INTO shapes (type, x, y, id_dessin) VALUES (?,?, ?, ?)";
         try (Connection conn = DriverManager.getConnection(url, user, password);
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-
             stmt.setString(1, shape.getType());
             stmt.setDouble(2, shape.getX());
             stmt.setDouble(3, shape.getY());
+            stmt.setInt(4, shape.getIdDessin());
             stmt.executeUpdate();
-
-            System.out.println("✅ Forme enregistrée dans la base.");
             Logger.getInstance().log("Forme sauvegardée avec succès : " + shape);
         } catch (SQLException ex) {
             System.out.println("Erreur base : " + ex.getMessage());
         }
     }
+
+//    public void saveShape(Shape shape) {
+//        String sql = "INSERT INTO shapes (type, x, y) VALUES (?, ?, ?)";
+//
+//        try (Connection conn = DriverManager.getConnection(url, user, password);
+//             PreparedStatement stmt = conn.prepareStatement(sql)) {
+//
+//            stmt.setString(1, shape.getType());
+//            stmt.setDouble(2, shape.getX());
+//            stmt.setDouble(3, shape.getY());
+//            stmt.executeUpdate();
+//
+//            System.out.println("✅ Forme enregistrée dans la base.");
+//            Logger.getInstance().log("Forme sauvegardée avec succès : " + shape);
+//        } catch (SQLException ex) {
+//            System.out.println("Erreur base : " + ex.getMessage());
+//        }
+//    }
     public List<Shape> getAllShapes() {
         List<Shape> list = new ArrayList<>();
         String sql = "SELECT type, x, y FROM shapes";
@@ -41,7 +55,8 @@ public class ShapeDAO {
                 String type = rs.getString("type");
                 double x = rs.getDouble("x");
                 double y = rs.getDouble("y");
-                list.add(new Shape(type, x, y));
+                int idDessin = rs.getInt("id_dessin");
+                list.add(new Shape(type, x, y, idDessin));
             }
             Logger.getInstance().log("Nombre de formes récupérées : " + list.size());
 
@@ -53,5 +68,30 @@ public class ShapeDAO {
         return list;
     }
 
+    public List<Shape> getShapesByDessinId(int dessinId) {
+        List<Shape> shapes = new ArrayList<>();
+        String sql = "SELECT id, type, x, y, id_dessin FROM shapes WHERE id_dessin = ?";
 
+        try (Connection conn = DriverManager.getConnection(url, user, password);
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, dessinId);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Shape shape = new Shape(
+                        rs.getString("type"),
+                        rs.getDouble("x"),
+                        rs.getDouble("y"),
+                        rs.getInt("id_dessin")
+                );
+
+                shapes.add(shape);
+            }
+
+        } catch (SQLException e) {
+            Logger.getInstance().log("Erreur getShapesByDessinId : " + e.getMessage());
+        }
+        return shapes;
+    }
 }
